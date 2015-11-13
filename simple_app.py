@@ -1,4 +1,5 @@
 from flask import Flask
+# from flask import request
 
 app = Flask(__name__)
 
@@ -14,6 +15,7 @@ def index(name="Solvaring"):
 @app.route('/add/<float:num1>/<int:num2>')
 @app.route('/add/<int:num1>/<float:num2>')
 def add(num1, num2):
+    # name = request.args.get('name', name)
     return '{} + {} = {}'.format(num1, num2, num1+num2)
 
 if __name__ == "__main__":
